@@ -7,6 +7,7 @@ import javax.swing.*;
 public class MenuSocio {
     public void mostrarMenu() {
 <<<<<<< HEAD
+<<<<<<< HEAD
         JOptionPane.showMessageDialog(null, "Bienvenido ☺!", "Socio", JOptionPane.INFORMATION_MESSAGE);
         String[] funcionalidades = {"Buscar Libros disponibles", "Agregar Libro", "Dejar reseña", "Salir"};
         
@@ -102,6 +103,14 @@ public class MenuSocio {
 >>>>>>> origin/develop
     }
 
+=======
+        String[] loginRegistro = {"Registrarse" , "Iniciar Sesión"};
+        int seleccionIngresoSesion ;
+
+
+    }
+
+>>>>>>> origin/develop
     private void ejecutarOpcionIniciarSesion(int seleccionIngresoSesion){
         switch (seleccionIngresoSesion){
             case 0:
