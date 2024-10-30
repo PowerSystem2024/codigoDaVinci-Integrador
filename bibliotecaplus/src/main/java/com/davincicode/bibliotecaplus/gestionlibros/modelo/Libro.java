@@ -1,11 +1,18 @@
 package com.davincicode.bibliotecaplus.gestionlibros.modelo;
 
 public class Libro {
+    /**Escribir atributos y comportamientos que necesitamos*/
 
-    private static int idLibro = 0; /*generamos un atributo de la clase y no de los objetos / idSocio lo incrementamos en 1 cada vez que se crea un objeto de tipo Socio*/
+    private static int id = 0; /*generamos un atributo de clase y no de objeto que funciona como contador cada vez que se instancia un objeto*/
+
+    private int idLibro; /*atributo id que va a tener cada objeto creado*/
 
     public Libro(){
-        idLibro = Libro.idLibro++; //para acceder al idLibro (atributo de clase) primero llamamos a la clase y luego al atributo, acá incrementamos en 1 en el constructor de la clase para aumentar en 1 el valor de idLibro cuando se instancia la clase
+        idLibro = Libro.id++; /*el id del socio le ponemos el valor del contador*/
     }
-   /**Escribir atributos y comportamientos que necesitamos*/
+
+    public static int getId() {
+        return id;
+    }
+
 }
