@@ -21,4 +21,36 @@ public class Socio extends Usuario {
         this.telefono = telefono;
         this.nombreUsuarioLogin = nombreUsuarioRegistro;
         this.contraseniaUsuarioLogin = contraseniaUsuarioRegistro
+
+    public Long getIdSocio() {
+        return idSocio;
+    }
+
+    public void setIdSocio(long idSocio) {
+        this.idSocio = idSocio;
+    }
+
+    public String getNombreUsuarioLogin() {
+        return nombreUsuarioLogin;
+    }
+
+    public void setNombreUsuarioLogin(String nombreUsuarioLogin) {
+    this.nombreUsuarioLogin= nombreUsuarioLogin;
+    }
+
+    public String getContraseniaLogin() {
+        return contraseniaLogin;
+    }
+
+    public void setContraseniaLogin(String contraseniaLogin) {
+    this.contraseniaLogin = contraseniaLogin;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+    this.telefono = telefono;
+    }
 }
