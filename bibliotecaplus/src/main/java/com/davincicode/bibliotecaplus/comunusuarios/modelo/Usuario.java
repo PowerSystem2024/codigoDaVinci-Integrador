@@ -1,4 +1,4 @@
-package com.davincicode.bibliotecaplus.gestionusuarios.modelo;
+package com.davincicode.bibliotecaplus.comunusuarios.modelo;
 
 public class Usuario {
     private String rol;
