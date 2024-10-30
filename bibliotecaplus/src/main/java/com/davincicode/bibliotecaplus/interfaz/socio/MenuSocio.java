@@ -85,6 +85,24 @@ public class MenuSocio {
         return null; // Retornar null si se cancela
     }
 
+    private boolean realizarLoginAplicacionSocio( ) {
+        String[] inputsIniciarSesion = armarModaliniciarSesion();
+        if(permitirLoguearse(inputsIniciarSesion)){
+            String[] funcionalidades = funcionalidadesSocio();
+            int funcionSeleccionada = mostrarMsjeSeleccionFuncionalidad(funcionalidades);
+            ejecutarFuncionSeleccionadaPorSocio(funcionSeleccionada);
+            return true;
+        }
+        return true;
+    }
+    private boolean permitirLoguearse(String[] inputsLogearse ){
+        String nombreUsuarioLogin = inputsLogearse[0];
+        String contraseniaUsuarioLogin = inputsLogearse[1];
+
+        ServicioSesion servicioSesion = new ServicioSesion();
+         boolean permiteLogin = servicioSesion.permitirLogin(nombreUsuarioLogin, contraseniaUsuarioLogin);
+        return permiteLogin;
+    }
 
 }
 
