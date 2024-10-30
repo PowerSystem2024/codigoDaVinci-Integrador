@@ -8,4 +8,7 @@ public class ServicioSesion {
     public ServicioSesion(){
         this.bdSesionSocio = new BDSesionSocio();
     }
+
+    public boolean permitirLogin(String nombreUsuarioLogin, String contraseniaLogin){
+        return bdSesionSocio.permitirLoginSocio(nombreUsuarioLogin,contraseniaLogin );
 }
