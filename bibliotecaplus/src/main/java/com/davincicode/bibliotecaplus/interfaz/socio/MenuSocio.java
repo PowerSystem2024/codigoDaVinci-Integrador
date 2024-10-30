@@ -3,12 +3,39 @@ import javax.swing.*;
 
 public class MenuSocio {
     public void mostrarMenu() {
-        JOptionPane.showMessageDialog(null, "Bienvenido, Socio. Aún no se ha implementado esta funcionalidad.", "Socio", JOptionPane.INFORMATION_MESSAGE);
+        String[] loginRegistro = {"Registrarse" , "Iniciar Sesión"};
+        int seleccionIngresoSesion ;
 
-        JOptionPane.showMessageDialog(null, "Bienvenidos ☺!", "Socio", JOptionPane.INFORMATION_MESSAGE);
+
+    }
+
+    private void ejecutarOpcionIniciarSesion(int seleccionIngresoSesion){
+        switch (seleccionIngresoSesion){
+            case 0:
+
+                break;
+            case 1:
+
+                break;
+
+            default:
+                JOptionPane.showMessageDialog(null, "No es una opción correcta!");
+                System.exit(0);
+        }
+    }
+
+    private int mostrarMsjeSeleccionFuncionalidad(String[] funcionalidades){
+        return JOptionPane.showOptionDialog(null, "Seleccione una funcionalidad:", "Funciones Socio",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, funcionalidades, funcionalidades[0]);
+    }
+
+
+
+    private String[] funcionalidadesSocio(){
         String[] funcionalidades = {"Buscar Libros disponibles", "Agregar Libro", "Dejar reseña", "Salir"};
-
-        int funcionSeleccionada = mostrarMsjeSeleccionFuncionalidad(funcionalidades);
+        return  funcionalidades;
+    }
+    private void ejecutarFuncionSeleccionadaPorSocio(int funcionSeleccionada){
         switch (funcionSeleccionada){
             case -1:
                 System.exit(0);
@@ -29,10 +56,35 @@ public class MenuSocio {
         }
     }
 
-    private int mostrarMsjeSeleccionFuncionalidad(String[] funcionalidades){
-        return JOptionPane.showOptionDialog(null, "Seleccione una funcionalidad:", "Funciones Socio",
-                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, funcionalidades, funcionalidades[0]);
+    private static String[] armarModaliniciarSesion() {
+        // Crea un JPanel para los inputs donde ingresa información el usuario
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
+        JTextField nombreUsuarioLoginField = new JTextField(20);
+        JTextField contraseniaUsuarioLoginField = new JTextField(20);
+
+
+        // Agregar los campos al panel
+        panel.add(new JLabel("Ingrese nombre usuario login:"));
+        panel.add(nombreUsuarioLoginField);
+        panel.add(new JLabel("Ingrese su contraseña:"));
+        panel.add(contraseniaUsuarioLoginField);
+
+
+        // Mostrar el dialogo con el panel
+        int option = JOptionPane.showConfirmDialog(null, panel, "Ingresar usuario y contraseña", JOptionPane.OK_CANCEL_OPTION);
+
+        // Si el usuario presiona OK, retornar los valores
+        if (option == JOptionPane.OK_OPTION) {
+            return new String[]{
+                    nombreUsuarioLoginField.getText(),
+                    contraseniaUsuarioLoginField.getText(),
+            };
+        }
+        return null; // Retornar null si se cancela
     }
 
-    }
+
+}
 
