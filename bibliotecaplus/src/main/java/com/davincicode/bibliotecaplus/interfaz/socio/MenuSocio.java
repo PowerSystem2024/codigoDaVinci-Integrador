@@ -70,7 +70,8 @@ public class MenuSocio {
         panel.add(nombreUsuarioLoginField);
         panel.add(new JLabel("Ingrese su contraseña:"));
         panel.add(contraseniaUsuarioLoginField);
-
+        
+        panel.add(celularSocio);
 
         // Mostrar el dialogo con el panel
         int option = JOptionPane.showConfirmDialog(null, panel, "Ingresar usuario y contraseña", JOptionPane.OK_CANCEL_OPTION);
