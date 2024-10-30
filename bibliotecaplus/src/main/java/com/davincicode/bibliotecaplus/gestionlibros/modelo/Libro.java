@@ -4,4 +4,5 @@ import java.util.Date;
 
 public class Libro {
    /**Escribir atributos y comportamientos que necesitamos*/
+   private String genero;
 }
