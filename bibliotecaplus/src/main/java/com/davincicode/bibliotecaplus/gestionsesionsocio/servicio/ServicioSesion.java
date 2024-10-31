@@ -8,4 +8,11 @@ public class ServicioSesion {
     public ServicioSesion(){
         this.bdSesionSocio = new BDSesionSocio();
     }
+
+public void registrarSocio(String nombre, String apellido, String correo, String telefono, String nombreUsuarioRegistro, String contraseniaUsuarioRegistro){
+    this.bdSesionSocio.aniadirRegistroSocio(nombre, apellido, correo, telefono, nombreUsuarioRegistro,contraseniaUsuarioRegistro);     
+}
+    
+
+    
 }

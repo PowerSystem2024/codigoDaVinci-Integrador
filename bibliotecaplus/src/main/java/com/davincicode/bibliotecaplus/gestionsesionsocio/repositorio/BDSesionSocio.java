@@ -12,5 +12,15 @@ public class BDSesionSocio implements SesionSocioRepository{
         this.registroSocios = new ArrayList<>();
     }
 
+private void inicializarListaSocio(){
+    registroSocios.add(new Socio(1L,"login", "123"));
+}
 
+@override
+public void aniadirRegistroSocio(String nombre, String apellido, String correo, String telefono, String nomberUsuarioRegistro, String contraseniaUsuarioRegistro){
+    Socio nuevoSocio = new Socio(ROL_SOCIO, nombre, apellio, correo, telefono, nombreUsuarioRegistro, contraseniaUsuarioRegistro);
+    registroSocios.add(nuevoSocio);
+    JOptionPane.showMessageDialog(null, "El socio fue registrado con éxito!");
+}
+    
 }
