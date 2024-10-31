@@ -2,10 +2,12 @@ package com.davincicode.bibliotecaplus.gestionsesionsocio.repositorio;
 
 import com.davincicode.bibliotecaplus.gestionusuarios.modelo.Socio;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class BDSesionSocio implements SesionSocioRepository{
+
     private List<Socio> registroSocios;
 
     public BDSesionSocio(){
@@ -13,14 +15,14 @@ public class BDSesionSocio implements SesionSocioRepository{
     }
 
 private void inicializarListaSocio(){
-    registroSocios.add(new Socio(1L,"login", "123"));
+    registroSocios.add(new Socio("Pepe", "pele", "Sel@gmail.com", "2222", "login", "123"));
 }
 
-@override
-public void aniadirRegistroSocio(String nombre, String apellido, String correo, String telefono, String nomberUsuarioRegistro, String contraseniaUsuarioRegistro){
-    Socio nuevoSocio = new Socio(ROL_SOCIO, nombre, apellio, correo, telefono, nombreUsuarioRegistro, contraseniaUsuarioRegistro);
-    registroSocios.add(nuevoSocio);
-    JOptionPane.showMessageDialog(null, "El socio fue registrado con éxito!");
-}
-    
+
+    @Override
+    public void aniadirRegistroSocio(String nombre, String apellido, String correo, String telefono, String nombreUsuarioRegistro, String contraseniaUsuarioRegistro) {
+            Socio nuevoSocio = new Socio( nombre, apellido, correo, telefono, nombreUsuarioRegistro, contraseniaUsuarioRegistro);
+            registroSocios.add(nuevoSocio);
+            JOptionPane.showMessageDialog(null, "El socio fue registrado con éxito!");
+    }
 }

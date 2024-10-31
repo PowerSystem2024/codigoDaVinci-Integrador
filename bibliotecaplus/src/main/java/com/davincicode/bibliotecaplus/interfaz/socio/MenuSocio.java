@@ -1,13 +1,13 @@
 package com.davincicode.bibliotecaplus.interfaz.socio;
 import com.davincicode.bibliotecaplus.gestionlibros.modelo.Resenia;
 import com.davincicode.bibliotecaplus.gestionlibros.servicio.LibroServicio;
+import com.davincicode.bibliotecaplus.gestionsesionsocio.servicio.ServicioSesion;
 
 import javax.swing.*;
 
 public class MenuSocio {
     public void mostrarMenu() {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         JOptionPane.showMessageDialog(null, "Bienvenido ☺!", "Socio", JOptionPane.INFORMATION_MESSAGE);
         String[] funcionalidades = {"Buscar Libros disponibles", "Agregar Libro", "Dejar reseña", "Salir"};
         
@@ -56,7 +56,7 @@ public class MenuSocio {
         biblioteca.agregarResenia(resenia);
     }
 
-    private static String[] ingresarLibroYResena() {
+    private  String[] ingresarLibroYResena() {
         // Crea un JPanel para los inputs donde ingresa información el usuario
         JPanel panel = new JPanel();
         JTextField libroField = new JTextField(20);
@@ -91,26 +91,7 @@ public class MenuSocio {
         return null; // Retornar null si se cancela
     }
 
-    private int mostrarMsjeSeleccionFuncionalidad(String[] funcionalidades){
-        return JOptionPane.showOptionDialog(null, "Seleccione una funcionalidad:", "Funciones Socio",
-                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, funcionalidades, funcionalidades[0]);
 
-=======
-        String[] loginRegistro = {"Registrarse" , "Iniciar Sesión"};
-        int seleccionIngresoSesion ;
-
-
->>>>>>> origin/develop
-    }
-
-=======
-        String[] loginRegistro = {"Registrarse" , "Iniciar Sesión"};
-        int seleccionIngresoSesion ;
-
-
-    }
-
->>>>>>> origin/develop
     private void ejecutarOpcionIniciarSesion(int seleccionIngresoSesion){
         switch (seleccionIngresoSesion){
             case 0:
@@ -130,8 +111,6 @@ public class MenuSocio {
         return JOptionPane.showOptionDialog(null, "Seleccione una funcionalidad:", "Funciones Socio",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, funcionalidades, funcionalidades[0]);
     }
-
-
 
     private String[] funcionalidadesSocio(){
         String[] funcionalidades = {"Buscar Libros disponibles", "Agregar Libro", "Dejar reseña", "Salir"};
@@ -158,7 +137,7 @@ public class MenuSocio {
         }
     }
 
-    private static String[] armarModaliniciarSesion() {
+    private  String[] armarModaliniciarSesion() {
         // Crea un JPanel para los inputs donde ingresa información el usuario
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -172,8 +151,6 @@ public class MenuSocio {
         panel.add(nombreUsuarioLoginField);
         panel.add(new JLabel("Ingrese su contraseña:"));
         panel.add(contraseniaUsuarioLoginField);
-        
-        panel.add(celularSocio);
 
         // Mostrar el dialogo con el panel
         int option = JOptionPane.showConfirmDialog(null, panel, "Ingresar usuario y contraseña", JOptionPane.OK_CANCEL_OPTION);
@@ -199,17 +176,20 @@ public class MenuSocio {
         contraseniaUsuarioRegistro = datosRegistro[5];
 
         if (validarDatosIngresadosRegistro(nombre, apellido, correo, telefono, nombreUsuarioRegistro, contraseniaUsuarioRegistro)){
-            ServicioSesion registrarSocio = new ServicioSocio();
+            ServicioSesion registrarSocio = new ServicioSesion();
             registrarSocio.registrarSocio(nombre, apellido, correo, telefono, nombreUsuarioRegistro, contraseniaUsuarioRegistro);
         }else{
             JOptionPane.showMessageDialog(null, "Todos los datos son necesarios para el registro", "Error", JOptionPane.ERROR_MESSAGE);
         }
-            
-            
+
         }
 
-    private boolean validarDatosIngresadosRegistro(String nombre, apellido, correo, telefono, nombreUsuarioRegistro, contraseniaUsuarioRegistro){
-        if(!nombre.trim().isEmpty() && !apellido.trim().isEmpty() && !correo.trim().isEmpty() && !telefono.trim().isEmpty() && !nombreUsuarioRegistro.trim().isEmpty() %% !contraseniaUsuarioRegistro.trim().isEmpty(){
+        private String[] armarModalRegistroSocio(){
+        return  null;
+        }
+
+    private boolean validarDatosIngresadosRegistro(String nombre, String apellido, String correo, String telefono, String nombreUsuarioRegistro, String contraseniaUsuarioRegistro){
+        if(!nombre.trim().isEmpty() && !apellido.trim().isEmpty() && !correo.trim().isEmpty() && !telefono.trim().isEmpty() && !nombreUsuarioRegistro.trim().isEmpty()  && !contraseniaUsuarioRegistro.trim().isEmpty()){
             return true;
         }
         return false;
