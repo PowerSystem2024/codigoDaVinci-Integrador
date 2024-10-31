@@ -14,4 +14,8 @@ public class LibroServicio {
     public List<Libro> obtenerTodosLosLibros(){
         return datosLibros.obtenerTodosLosLibros();//Devuelve la lista que retorna el metodo obtenerTodosLosLibros
     }
+    
+    public void agregarLibroABiblioteca(String titulo, String autor, boolean disponibilidad, int fechaDeDevolicion){
+        datosLibros.agregarLibro(titulo, autor, disponibilidad, fechaDeDevolicion);
+    }
 }

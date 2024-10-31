@@ -17,5 +17,11 @@ public class BDLibros implements LibroRepository {
     public List<Libro> obtenerTodosLosLibros() {
         return libros;
     }
+
+    @Override
+    public void agregarLibro(String titulo, String autor, boolean disponibilidad, int fechaDeDevolucion) {
+        Libro nuevoLibro = new Libro(titulo, autor, disponibilidad, fechaDeDevolucion);
+        libros.add(nuevoLibro);
+    }
      
 }
