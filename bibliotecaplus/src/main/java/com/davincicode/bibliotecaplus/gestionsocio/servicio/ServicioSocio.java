@@ -3,6 +3,7 @@ package com.davincicode.bibliotecaplus.gestionsocio.servicio;
 
 import com.davincicode.bibliotecaplus.gestionsocio.repositorio.BDSocio;
 import com.davincicode.bibliotecaplus.gestionusuarios.modelo.Socio;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ServicioSocio {
@@ -13,6 +14,7 @@ public class ServicioSocio {
     }
     
     public List<Socio> obtenerSocios(){
+        List<Socio> sociosFiltrados = new ArrayList<>();
         return baseDatosSocios.mostrarSocios();
     }
 }

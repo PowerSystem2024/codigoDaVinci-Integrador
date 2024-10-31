@@ -8,7 +8,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String rol , String nombre, String correo){
+    public Usuario(String rol, String nombre, String correo){
         this.rol = rol;
         this.nombre = nombre;
         this.correo = correo;

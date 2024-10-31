@@ -23,15 +23,11 @@ public class Socio extends Usuario {
         this.telefono = telefono;
         this.nombreUsuarioRegistro = nombreUsuarioRegistro;
         this.contraseniaUsuarioRegistro = contraseniaUsuarioRegistro;
-        idSocio = id++; /*el id del socio le ponemos el valor del contador*/
+        idSocio = Socio.id++; /*el id del socio le ponemos el valor del contador*/
     }
 
     public int getIdSocio() {
         return idSocio;
-    }
-
-    public void setIdSocio(int idSocio) {
-        this.idSocio = idSocio;
     }
 
     public String getApellido() {

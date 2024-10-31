@@ -87,6 +87,6 @@ public class MenuBibliotecario {
     }
     private List<Socio> obtenerTodosLosSocios(){
         ServicioSocio biblioteca = new ServicioSocio();
-        
+        return biblioteca.obtenerSocios();
     }
 }
