@@ -5,18 +5,19 @@ import com.davincicode.bibliotecaplus.comunusuarios.modelo.Usuario;
 
 public class Socio extends Usuario {
     /**Escribir atributos y comportamientos que necesitamos*/
-    
+
     private static int id = 1; /*generamos un atributo de clase y no de objeto que funciona como contador cada vez que se instancia un objeto*/
     private int idSocio; /*atributo id que va a tener cada objeto creado*/
     private String apellido;
     private String telefono;
     private String nombreUsuarioRegistro;
     private String contraseniaUsuarioRegistro;
-    
+    private String nombreUsuarioLogin;
+    private String contraseniaLogin;
     public Socio(){
         idSocio = Socio.id++; /*el id del socio le ponemos el valor del contador*/
-    } 
-    
+    }
+
     public Socio(String nombre, String apellido, String correo, String telefono, String nombreUsuarioRegistro, String contraseniaUsuarioRegistro) {
         super("Socio",nombre,correo);
         this.apellido = apellido;
@@ -61,6 +62,6 @@ public class Socio extends Usuario {
     public void setContraseniaUsuarioRegistro(String contraseniaUsuarioRegistro) {
         this.contraseniaUsuarioRegistro = contraseniaUsuarioRegistro;
     }
-    
-    
+
+
 }

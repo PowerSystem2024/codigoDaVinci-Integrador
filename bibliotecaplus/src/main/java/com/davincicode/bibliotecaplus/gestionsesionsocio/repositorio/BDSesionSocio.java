@@ -17,6 +17,18 @@ public class BDSesionSocio implements SesionSocioRepository{
 private void inicializarListaSocio(){
     registroSocios.add(new Socio("Pepe", "pele", "Sel@gmail.com", "2222", "login", "123"));
 }
+@Override
+public boolean permitirLoginSocio(String nombreUsuarioLoginIngresado, String contraseniaLoginIngresada) {
+    if(!nombreUsuarioLoginIngresado.trim().isEmpty() && !contraseniaLoginIngresada.trim().isEmpty() ){
+        for(int i = 0; i < registroSocios.size(); i++){
+            //valido que nombre suario y contraseña coincidan con algún elemento de la lista
+            if(nombreUsuarioLoginIngresado.equalsIgnoreCase(registroSocios.get(i).getNombreUsuarioLogin())
+                    && contraseniaLoginIngresada.equalsIgnoreCase(registroSocios.get(i).getContraseniaLogin())) {
+                return true;
+            }
+        }
+    }
+    return false; /*por defecto no va a permitir el login*/
 
 
     @Override

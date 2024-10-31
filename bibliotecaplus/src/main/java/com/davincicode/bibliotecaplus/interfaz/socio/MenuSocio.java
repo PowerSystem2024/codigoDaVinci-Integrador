@@ -10,7 +10,7 @@ public class MenuSocio {
 
         JOptionPane.showMessageDialog(null, "Bienvenido ☺!", "Socio", JOptionPane.INFORMATION_MESSAGE);
         String[] funcionalidades = {"Buscar Libros disponibles", "Agregar Libro", "Dejar reseña", "Salir"};
-        
+
         int funcionSeleccionada = mostrarMsjeSeleccionFuncionalidad(funcionalidades);
 
         switch (funcionSeleccionada){
@@ -183,6 +183,24 @@ public class MenuSocio {
         }
 
         }
+    private boolean realizarLoginAplicacionSocio( ) {
+        String[] inputsIniciarSesion = armarModaliniciarSesion();
+        if(permitirLoguearse(inputsIniciarSesion)){
+            String[] funcionalidades = funcionalidadesSocio();
+            int funcionSeleccionada = mostrarMsjeSeleccionFuncionalidad(funcionalidades);
+            ejecutarFuncionSeleccionadaPorSocio(funcionSeleccionada);
+            return true;
+        }
+        return true;
+    }
+    private boolean permitirLoguearse(String[] inputsLogearse ){
+        String nombreUsuarioLogin = inputsLogearse[0];
+        String contraseniaUsuarioLogin = inputsLogearse[1];
+
+        ServicioSesion servicioSesion = new ServicioSesion();
+         boolean permiteLogin = servicioSesion.permitirLogin(nombreUsuarioLogin, contraseniaUsuarioLogin);
+        return permiteLogin;
+    }
 
         private String[] armarModalRegistroSocio(){
         return  null;
@@ -195,7 +213,7 @@ public class MenuSocio {
         return false;
     }
 
-    
+
     }
 
 

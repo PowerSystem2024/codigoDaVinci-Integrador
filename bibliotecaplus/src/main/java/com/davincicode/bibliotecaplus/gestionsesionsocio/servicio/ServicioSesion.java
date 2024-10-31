@@ -15,4 +15,8 @@ public void registrarSocio(String nombre, String apellido, String correo, String
     
 
     
+
+    public boolean permitirLogin(String nombreUsuarioLogin, String contraseniaLogin){
+        return bdSesionSocio.permitirLoginSocio(nombreUsuarioLogin,contraseniaLogin );
+}
 }
