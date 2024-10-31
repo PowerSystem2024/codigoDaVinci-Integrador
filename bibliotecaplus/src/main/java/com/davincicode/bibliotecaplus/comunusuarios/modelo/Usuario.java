@@ -9,13 +9,14 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String rol, String nombre, String correo){
+    public Usuario(String rol, String nombre, String correo) {
         this.rol = rol;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
     }
-    public Usuario(String nombre){
+
+    public Usuario(String nombre) {
         this.nombre = nombre;
     }
 
@@ -50,4 +51,5 @@ public class Usuario {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
 }

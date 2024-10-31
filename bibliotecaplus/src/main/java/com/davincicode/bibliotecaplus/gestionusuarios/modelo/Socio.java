@@ -63,5 +63,19 @@ public class Socio extends Usuario {
         this.contraseniaUsuarioRegistro = contraseniaUsuarioRegistro;
     }
 
+    public String getNombreUsuarioLogin() {
+        return nombreUsuarioLogin;
+    }
 
+    public void setNombreUsuarioLogin(String nombreUsuarioLogin) {
+        this.nombreUsuarioLogin = nombreUsuarioLogin;
+    }
+
+    public String getContraseniaLogin() {
+        return contraseniaLogin;
+    }
+
+    public void setContraseniaLogin(String contraseniaLogin) {
+        this.contraseniaLogin = contraseniaLogin;
+    }
 }

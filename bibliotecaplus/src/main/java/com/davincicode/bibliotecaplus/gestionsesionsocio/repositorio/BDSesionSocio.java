@@ -19,22 +19,24 @@ private void inicializarListaSocio(){
 }
 @Override
 public boolean permitirLoginSocio(String nombreUsuarioLoginIngresado, String contraseniaLoginIngresada) {
-    if(!nombreUsuarioLoginIngresado.trim().isEmpty() && !contraseniaLoginIngresada.trim().isEmpty() ){
-        for(int i = 0; i < registroSocios.size(); i++){
+    if (!nombreUsuarioLoginIngresado.trim().isEmpty() && !contraseniaLoginIngresada.trim().isEmpty()) {
+        for (int i = 0; i < registroSocios.size(); i++) {
             //valido que nombre suario y contraseña coincidan con algún elemento de la lista
-            if(nombreUsuarioLoginIngresado.equalsIgnoreCase(registroSocios.get(i).getNombreUsuarioLogin())
+            if (nombreUsuarioLoginIngresado.equalsIgnoreCase(registroSocios.get(i).getNombreUsuarioLogin())
                     && contraseniaLoginIngresada.equalsIgnoreCase(registroSocios.get(i).getContraseniaLogin())) {
                 return true;
             }
         }
     }
     return false; /*por defecto no va a permitir el login*/
-
+}
 
     @Override
-    public void aniadirRegistroSocio(String nombre, String apellido, String correo, String telefono, String nombreUsuarioRegistro, String contraseniaUsuarioRegistro) {
-            Socio nuevoSocio = new Socio( nombre, apellido, correo, telefono, nombreUsuarioRegistro, contraseniaUsuarioRegistro);
-            registroSocios.add(nuevoSocio);
-            JOptionPane.showMessageDialog(null, "El socio fue registrado con éxito!");
+    public void aniadirRegistroSocio(String nombre, String apellido, String correo, String telefono, String nombreUsuarioRegistro, String contraseniaUsuarioRegistro){
+        Socio nuevoSocio = new Socio(nombre, apellido, correo, telefono, nombreUsuarioRegistro, contraseniaUsuarioRegistro);
+        registroSocios.add(nuevoSocio);
+        JOptionPane.showMessageDialog(null, "El socio fue registrado con éxito!");
     }
+
+
 }
