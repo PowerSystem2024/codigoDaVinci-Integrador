@@ -8,19 +8,19 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BDLibros implements LibroRepository{
+public class BDLibros implements LibroRepository {
 
     private List<Resenia> resenias;
     private List<Libro> libros;
 
-    public BDLibros(){
+    public BDLibros() {
         this.resenias = new ArrayList<>();
         this.libros = new ArrayList<>();
     }
 
     @Override
     public void agregarReseniaLibro(Resenia resenia) {
-        if(resenia == null){
+        if (resenia == null) {
             JOptionPane.showMessageDialog(null, "El usuario no envió los datos del libro", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
         resenias.add(resenia);
@@ -38,4 +38,4 @@ public class BDLibros implements LibroRepository{
         return libros;
     }
 
-
+}
