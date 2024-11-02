@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface LibroRepository {
 
-    //TODO 
     void agregarReseniaLibro(Resenia resenia);
     List<Resenia> mostrarResenias();
+    List<Libro> obtenerTodosLosLibros ();
 }

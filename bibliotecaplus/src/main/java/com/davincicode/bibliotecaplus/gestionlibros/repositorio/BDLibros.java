@@ -32,4 +32,10 @@ public class BDLibros implements LibroRepository{
         return List.of((Resenia) resenias);
     }
 
-}
+
+    @Override
+    public List<Libro> obtenerTodosLosLibros() {
+        return libros;
+    }
+
+
