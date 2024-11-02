@@ -10,4 +10,5 @@ public interface LibroRepository {
     void agregarReseniaLibro(Resenia resenia);
     List<Resenia> mostrarResenias();
     List<Libro> obtenerTodosLosLibros ();
+    void agregarLibro(String titulo, String autor, boolean disponibilidad, int fechaDeDevolucion);
 }

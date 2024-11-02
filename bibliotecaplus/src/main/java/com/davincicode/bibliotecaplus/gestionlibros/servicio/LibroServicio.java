@@ -3,7 +3,6 @@ package com.davincicode.bibliotecaplus.gestionlibros.servicio;
 import com.davincicode.bibliotecaplus.gestionlibros.modelo.Resenia;
 import com.davincicode.bibliotecaplus.gestionlibros.modelo.Libro;
 import com.davincicode.bibliotecaplus.gestionlibros.repositorio.BDLibros;
-
 import java.util.List;
 
 public class LibroServicio {
@@ -24,4 +23,7 @@ public class LibroServicio {
         return datosLibros.mostrarResenias();
     }
 
+    public void agregarLibroABiblioteca(String titulo, String autor, boolean disponibilidad, int fechaDeDevolicion){
+        datosLibros.agregarLibro(titulo, autor, disponibilidad, fechaDeDevolicion);
+    }
 }

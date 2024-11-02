@@ -2,7 +2,6 @@ package com.davincicode.bibliotecaplus.gestionlibros.repositorio;
 
 import com.davincicode.bibliotecaplus.gestionlibros.modelo.Libro;
 import com.davincicode.bibliotecaplus.gestionlibros.modelo.Resenia;
-import com.davincicode.bibliotecaplus.gestionusuarios.modelo.Socio;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -32,10 +31,15 @@ public class BDLibros implements LibroRepository {
         return List.of((Resenia) resenias);
     }
 
-
     @Override
     public List<Libro> obtenerTodosLosLibros() {
         return libros;
+    }
+
+    @Override
+    public void agregarLibro(String titulo, String autor, boolean disponibilidad, int fechaDeDevolucion) {
+        Libro nuevoLibro = new Libro(titulo, autor, disponibilidad, fechaDeDevolucion);
+        libros.add(nuevoLibro);
     }
 
 }
