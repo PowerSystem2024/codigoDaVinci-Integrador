@@ -25,6 +25,9 @@ public class RunApp {
      * los métodos con la palabra reservada static indican que pertenecen a la clase y no a una instancia específica de la clase
      * de esta manera podemos llamar a los métodos directamente desde el contexto estático, sin tener que instanciar un objeto
      * */
+    
+    
+    
 
     public static void mostrarTituloAplicacion(){
        JOptionPane.showMessageDialog(null, "Bienvenido a BibliotecaPlus", "BibliotecaPlus", JOptionPane.INFORMATION_MESSAGE);
