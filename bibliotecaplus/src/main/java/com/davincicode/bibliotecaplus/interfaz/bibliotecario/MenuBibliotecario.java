@@ -2,6 +2,9 @@ package com.davincicode.bibliotecaplus.interfaz.bibliotecario;
 
 import com.davincicode.bibliotecaplus.gestionautores.servicio.AutorServicio;
 import com.davincicode.bibliotecaplus.gestionautores.modelo.Autor;
+import com.davincicode.bibliotecaplus.gestionsocio.servicio.ServicioSocio;
+import com.davincicode.bibliotecaplus.gestionusuarios.modelo.Socio;
+import com.davincicode.bibliotecaplus.gestionlibros.servicio.LibroServicio;
 
 import javax.swing.*;
 import java.util.List;
@@ -27,7 +30,7 @@ public class MenuBibliotecario {
                 //TODO: llamar método para buscar libros
                 break;
             case 2:
-                //TODO: llamar método para agregar libros
+                agregarLibroABiblioteca();
                 break;
             case 3:
                /*si selecciona la opción de la posición 3 "salir" lo sacamos del sistema*/
@@ -35,6 +38,23 @@ public class MenuBibliotecario {
                 break;
         }
 
+    }
+
+    private void agregarLibroABiblioteca(){
+        String[] datosLibro = armarModalCargarLibro();
+        String titulo, autor, fechaDevolucion;
+        titulo = datosLibro[8];
+        autor = datosLibro[1];
+        fechaDevolucion = datosLibro[2];
+        Integer fechaDeConvertidaAInteger = Integer.valueOf(fechaDevolucion);/*convertimos la fecha String a Integer*/
+        boolean disponibilidad = true; /*cuando cargamos el libro lo dejamos disponible para que lo pidan*/
+
+        LibroServicio bibliotecario = new LibroServicio();/*creamos instancia de LibroServicio para llamar al metodo que agrega el libro*/
+        bibliotecario.agregarLibroABiblioteca(titulo, autor, disponibilidad, fechaDeConvertidaAInteger);
+    }
+    //Esta parte le toca a Matias Cabello
+    private String[] armarModalCargarLibro(){
+        return null;
     }
 
     private int mostrarMsjeSeleccionFuncionalidad(String[] funcionalidades){
@@ -82,5 +102,9 @@ public class MenuBibliotecario {
     private void mostrarAdvertencia(String mensaje){
         JOptionPane.showMessageDialog(null, mensaje, "Advertencia", JOptionPane.WARNING_MESSAGE);
 
+    }
+    private List<Socio> obtenerTodosLosSocios(){
+        ServicioSocio biblioteca = new ServicioSocio();
+        return biblioteca.obtenerSocios();
     }
 }
