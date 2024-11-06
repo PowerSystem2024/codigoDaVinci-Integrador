@@ -17,6 +17,18 @@ public class BDLibros implements LibroRepository {
         this.resenias = new ArrayList<>();
         this.libros = new ArrayList<>();
         this.contadorId = 1; // Empezar el contador desde 1
+
+        // Agregar 10 libros por defecto
+        agregarLibro("El Aleph", "Jorge Luis Borges", true, 0); // Disponible
+        agregarLibro("Cien años de soledad", "Gabriel García Márquez", false, 101224); // Prestado
+        agregarLibro("Rayuela", "Julio Cortázar", true, 0); // Disponible
+        agregarLibro("Don Quijote de la Mancha", "Miguel de Cervantes", true, 0); // Disponible
+        agregarLibro("Fervor de Buenos Aires", "Jorge Luis Borges", false, 111224); // Prestado
+        agregarLibro("Los detectives salvajes", "Roberto Bolaño", true, 0); // Disponible
+        agregarLibro("La invención de Morel", "Adolfo Bioy Casares", false, 121224); // Prestado
+        agregarLibro("La sombra del viento", "Carlos Ruiz Zafón", true, 0); // Disponible
+        agregarLibro("El túnel", "Ernesto Sabato", true, 0); // Disponible
+        agregarLibro("Fortunata y Jacinta", "Benito Pérez Galdós", false, 131224); // Prestado
     }
 
     @Override
@@ -46,4 +58,3 @@ public class BDLibros implements LibroRepository {
         libros.add(nuevoLibro);
     }
 }
-
