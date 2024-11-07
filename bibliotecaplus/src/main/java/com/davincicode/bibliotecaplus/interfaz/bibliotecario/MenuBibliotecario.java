@@ -2,10 +2,10 @@ package com.davincicode.bibliotecaplus.interfaz.bibliotecario;
 
 import com.davincicode.bibliotecaplus.gestionautores.servicio.AutorServicio;
 import com.davincicode.bibliotecaplus.gestionautores.modelo.Autor;
-import com.davincicode.bibliotecaplus.gestionsocio.servicio.ServicioSocio;
-import com.davincicode.bibliotecaplus.gestionusuarios.modelo.Socio;
 import com.davincicode.bibliotecaplus.gestionlibros.modelo.Libro;
 import com.davincicode.bibliotecaplus.gestionlibros.servicio.LibroServicio;
+import com.davincicode.bibliotecaplus.gestionsocio.servicio.ServicioSocio;
+import com.davincicode.bibliotecaplus.gestionusuarios.modelo.Socio;
 
 import javax.swing.*;
 import java.util.List;
@@ -142,5 +142,10 @@ private void cambiarFechaDevolucion() {
     private String[] armarModalCargarLibro() {
         // Este método debe implementar el modal de carga de libro (se puede dejar en blanco si no se implementa aún)
         return new String[] {"","","010123", "Título del libro", "Autor", "Editor", "Género", "Descripción", "Fecha de Devolución"};
+    }
+
+    private List<Socio> obtenerTodosLosSocios(){
+        ServicioSocio biblioteca = new ServicioSocio();
+        return biblioteca.obtenerSocios();
     }
 }

@@ -13,4 +13,5 @@ public interface AutorRepository {
 
     List<Autor> obtenerAutoresPorNacionalidad(String nacionalidad) ;
     void  agregarAutor(Autor autor);
+    List<Autor> obtenerTodosLosAutores();
 }
