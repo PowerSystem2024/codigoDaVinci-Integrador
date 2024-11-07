@@ -49,3 +49,14 @@ public class LibroServicio {
             JOptionPane.showMessageDialog(null, "No se encontró un libro con el ID especificado.");
         }
     }
+
+    // Método para buscar un libro por su ID
+    public Libro buscarLibroPorId(int idLibro) {
+        for (Libro libro : datosLibros.obtenerTodosLosLibros()) {
+            if (libro.getIdLibro() == idLibro) {
+                return libro;
+            }
+        }
+        return null; // Si no se encuentra el libro, retorna null
+    }
+}
