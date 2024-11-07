@@ -11,24 +11,26 @@ public class BDLibros implements LibroRepository {
 
     private List<Resenia> resenias;
     private List<Libro> libros;
-    private int contadorId; // Para asignar ID único a los libros
-
     public BDLibros() {
         this.resenias = new ArrayList<>();
         this.libros = new ArrayList<>();
-        this.contadorId = 1; // Empezar el contador desde 1
-
-        // Agregar 10 libros por defecto
-        agregarLibro("El Aleph", "Jorge Luis Borges", true, 0); // Disponible
-        agregarLibro("Cien años de soledad", "Gabriel García Márquez", false, 101224); // Prestado
-        agregarLibro("Rayuela", "Julio Cortázar", true, 0); // Disponible
-        agregarLibro("Don Quijote de la Mancha", "Miguel de Cervantes", true, 0); // Disponible
-        agregarLibro("Fervor de Buenos Aires", "Jorge Luis Borges", false, 111224); // Prestado
-        agregarLibro("Los detectives salvajes", "Roberto Bolaño", true, 0); // Disponible
-        agregarLibro("La invención de Morel", "Adolfo Bioy Casares", false, 121224); // Prestado
-        agregarLibro("La sombra del viento", "Carlos Ruiz Zafón", true, 0); // Disponible
-        agregarLibro("El túnel", "Ernesto Sabato", true, 0); // Disponible
-        agregarLibro("Fortunata y Jacinta", "Benito Pérez Galdós", false, 131224); // Prestado
+        inicializarListaDeLibro();
+//        // Agregar 10 libros por defecto
+//        agregarLibro("El Aleph", "Jorge Luis Borges", true, 0); // Disponible
+//        agregarLibro("Cien años de soledad", "Gabriel García Márquez", false, 101224); // Prestado
+//        agregarLibro("Rayuela", "Julio Cortázar", true, 0); // Disponible
+//        agregarLibro("Don Quijote de la Mancha", "Miguel de Cervantes", true, 0); // Disponible
+//        agregarLibro("Fervor de Buenos Aires", "Jorge Luis Borges", false, 111224); // Prestado
+//        agregarLibro("Los detectives salvajes", "Roberto Bolaño", true, 0); // Disponible
+//        agregarLibro("La invención de Morel", "Adolfo Bioy Casares", false, 121224); // Prestado
+//        agregarLibro("La sombra del viento", "Carlos Ruiz Zafón", true, 0); // Disponible
+//        agregarLibro("El túnel", "Ernesto Sabato", true, 0); // Disponible
+//        agregarLibro("Fortunata y Jacinta", "Benito Pérez Galdós", false, 131224); // Prestado
+    }
+    private void inicializarListaDeLibro(){
+        libros.add(new Libro("El Aleph", "Jorge Luis Borges", true, 0));
+        libros.add(new Libro("Cien años de soledad", "Gabriel García Márquez", false, 101224));
+        libros.add(new Libro("Rayuela", "Julio Cortázar", true, 0));
     }
 
     @Override
@@ -54,7 +56,19 @@ public class BDLibros implements LibroRepository {
     @Override
     public void agregarLibro(String titulo, String autor, boolean disponibilidad, int fechaDeDevolucion) {
         // Asignar un ID único al nuevo libro
-        Libro nuevoLibro = new Libro(contadorId++, titulo, autor, disponibilidad, fechaDeDevolucion);
+        Libro nuevoLibro = new Libro(titulo, autor, disponibilidad, fechaDeDevolucion);
         libros.add(nuevoLibro);
     }
 }
+
+//// Agregar 10 libros por defecto
+//        agregarLibro("El Aleph", "Jorge Luis Borges", true, 0); // Disponible
+//        agregarLibro("Cien años de soledad", "Gabriel García Márquez", false, 101224); // Prestado
+//        agregarLibro("Rayuela", "Julio Cortázar", true, 0); // Disponible
+//        agregarLibro("Don Quijote de la Mancha", "Miguel de Cervantes", true, 0); // Disponible
+//        agregarLibro("Fervor de Buenos Aires", "Jorge Luis Borges", false, 111224); // Prestado
+//        agregarLibro("Los detectives salvajes", "Roberto Bolaño", true, 0); // Disponible
+//        agregarLibro("La invención de Morel", "Adolfo Bioy Casares", false, 121224); // Prestado
+//        agregarLibro("La sombra del viento", "Carlos Ruiz Zafón", true, 0); // Disponible
+//        agregarLibro("El túnel", "Ernesto Sabato", true, 0); // Disponible
+//        agregarLibro("Fortunata y Jacinta", "Benito Pérez Galdós", false, 131224); // Prestado
