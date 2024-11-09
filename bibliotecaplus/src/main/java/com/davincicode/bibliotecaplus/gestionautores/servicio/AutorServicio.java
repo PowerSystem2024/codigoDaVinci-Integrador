@@ -18,5 +18,7 @@ public class AutorServicio {
     public List<Autor> findAutorByNacionalidad(String nacionalidad)  {
         return baseDatosAutores.obtenerAutoresPorNacionalidad(nacionalidad);
     }
+      public List<Autor> obtenerTodosLosAutores()  {
+        return baseDatosAutores.obtenerTodosLosAutores();
 
 }
