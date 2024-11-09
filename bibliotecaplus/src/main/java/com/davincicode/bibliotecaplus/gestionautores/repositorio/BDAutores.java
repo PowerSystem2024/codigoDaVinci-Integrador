@@ -55,8 +55,9 @@ public class BDAutores implements AutorRepository {
 
     @Override
     public List<Autor> obtenerTodosLosAutores() {
-        return List.of();
+        return autores;
     }
+     
 
 
 }
