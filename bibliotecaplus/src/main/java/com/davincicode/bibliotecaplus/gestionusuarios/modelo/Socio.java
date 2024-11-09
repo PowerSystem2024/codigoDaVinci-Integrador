@@ -14,6 +14,7 @@ public class Socio extends Usuario {
     private String contraseniaUsuarioRegistro;
     private String nombreUsuarioLogin;
     private String contraseniaLogin;
+
     public Socio(){
         idSocio = Socio.id++; /*el id del socio le ponemos el valor del contador*/
     }
@@ -22,8 +23,8 @@ public class Socio extends Usuario {
         super("Socio",nombre,correo);
         this.apellido = apellido;
         this.telefono = telefono;
-        this.nombreUsuarioRegistro = nombreUsuarioRegistro;
-        this.contraseniaUsuarioRegistro = contraseniaUsuarioRegistro;
+        this.nombreUsuarioLogin = nombreUsuarioRegistro;
+        this.contraseniaLogin = contraseniaUsuarioRegistro;
         idSocio = Socio.id++; /*el id del socio le ponemos el valor del contador*/
     }
 
