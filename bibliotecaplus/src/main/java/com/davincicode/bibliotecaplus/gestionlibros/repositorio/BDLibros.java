@@ -44,9 +44,9 @@ public class BDLibros implements LibroRepository {
     }
 
     @Override
-    public void agregarLibro(String titulo, String autor, boolean disponibilidad, int fechaDeDevolucion) {
+    public void agregarLibro(String titulo, String autor, boolean disponibilidad) {
         // Asignar un ID único al nuevo libro
-        Libro nuevoLibro = new Libro(titulo, autor, disponibilidad, fechaDeDevolucion);
+        Libro nuevoLibro = new Libro(titulo, autor, disponibilidad);
         libros.add(nuevoLibro);
     }
 }

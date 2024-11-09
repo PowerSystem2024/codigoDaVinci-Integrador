@@ -25,8 +25,8 @@ public class LibroServicio {
         return datosLibros.mostrarResenias(); // Mostrar reseñas
     }
 
-    public void agregarLibroABiblioteca(String titulo, String autor, boolean disponibilidad, int fechaDeDevolucion) {
-        datosLibros.agregarLibro(titulo, autor, disponibilidad, fechaDeDevolucion); // Agregar un libro a la biblioteca
+    public void agregarLibroABiblioteca(String titulo, String autor, boolean disponibilidad) {
+        datosLibros.agregarLibro(titulo, autor, disponibilidad); // Agregar un libro a la biblioteca
     }
 
     // Función para cambiar la fecha de devolución
