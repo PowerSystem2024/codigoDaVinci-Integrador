@@ -245,7 +245,7 @@ public class MenuSocio {
     }
 
     private String[] funcionalidadesSocio(){
-        String[] funcionalidades = {"Buscar Libros disponibles", "Agregar Libro", "Dejar reseña", "Salir"};
+        String[] funcionalidades = {"Buscar Libros disponibles", "Dejar reseña", "Salir"};
         return  funcionalidades;
     }
     private void ejecutarFuncionSeleccionadaPorSocio(int funcionSeleccionada){
@@ -257,11 +257,9 @@ public class MenuSocio {
                 mostrarTodosLosLibros();
                 break;
             case 1:
-                break;
-            case 2:
                 agregarResenia();
                 break;
-            case 3:
+            case 2:
                 /*si selecciona la opción de la posición 3 "salir" lo sacamos del sistema*/
                 System.exit(0);
                 break;
