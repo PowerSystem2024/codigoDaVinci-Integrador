@@ -1,9 +1,12 @@
 package com.davincicode.bibliotecaplus.interfaz.socio;
+import com.davincicode.bibliotecaplus.gestionautores.modelo.Autor;
+import com.davincicode.bibliotecaplus.gestionlibros.modelo.Libro;
 import com.davincicode.bibliotecaplus.gestionlibros.modelo.Resenia;
 import com.davincicode.bibliotecaplus.gestionlibros.servicio.LibroServicio;
 import com.davincicode.bibliotecaplus.gestionsesionsocio.servicio.ServicioSesion;
 
 import javax.swing.*;
+import java.util.List;
 
 public class MenuSocio {
     public void mostrarMenu() {
@@ -99,6 +102,25 @@ public class MenuSocio {
     private void agregarResenia(Resenia resenia){
         LibroServicio biblioteca = new LibroServicio();
         biblioteca.agregarResenia(resenia);
+    }
+
+    private List<Libro> obtenerTodosLosLibros(){
+        LibroServicio accesoLibros = new LibroServicio();
+        return accesoLibros.obtenerTodosLosLibros();
+    }
+
+    public void mostrarTodosLosLibros(){
+        List<Libro> listaLibros = obtenerTodosLosLibros();
+        StringBuilder listaDeLibros = new StringBuilder("Libros encontrados:\n");
+
+        for(Libro libro: listaLibros){
+            listaDeLibros.append("Nombre: ").append(libro.getTitulo())
+                    .append(", Autor: ").append(libro.getAutor())
+                    .append(", Fecha de Devolucion: ").append(libro.getFechaDeDevolucion()).append("\n");
+        }
+        JOptionPane.showMessageDialog(null,listaDeLibros.toString(),"Resultados de Búsqueda", JOptionPane.INFORMATION_MESSAGE );
+
+
     }
 
     private static String[] armarModalRegistroSocio() {
@@ -232,10 +254,9 @@ public class MenuSocio {
                 System.exit(0);
                 //     break;
             case 0:
-                //TODO: llamamos a la función que posibilita buscar libros disponibles
+                mostrarTodosLosLibros();
                 break;
             case 1:
-                //TODO: llamar método para Agregar libros
                 break;
             case 2:
                 agregarResenia();
