@@ -429,29 +429,36 @@ public class MenuBibliotecario {
 
     private void cambiarFechaDevolucion() {
         String libroIdString = JOptionPane.showInputDialog("Ingrese el ID del libro cuyo retorno desea modificar:");
-        int libroId = Integer.parseInt(libroIdString);
-        LibroServicio servicio = new LibroServicio();
-        Libro libro = servicio.buscarLibroPorId(libroId);
 
-        if (libro != null) {
-            String mensajeLibro = "Datos del libro:\n" +
-                                  "Título: " + libro.getTitulo() + "\n" +
-                                  "Autor: " + libro.getAutor() + "\n" +
-                                  "Disponibilidad: " + (libro.isDisponibilidad() ? "Disponible" : "No disponible") + "\n" +
-                                  "Fecha de devolución actual: " + (libro.getFechaDeDevolucion() == 0 ? "No tiene fecha de devolución" : libro.getFechaDeDevolucion());
+        if( !libroIdString.trim().isEmpty()){
+            int libroId = Integer.parseInt(libroIdString);
+            LibroServicio servicio = new LibroServicio();
+            Libro libro = servicio.buscarLibroPorId(libroId);
 
-            JOptionPane.showMessageDialog(null, mensajeLibro, "Información del Libro", JOptionPane.INFORMATION_MESSAGE);
+            if (libro != null) {
+                String mensajeLibro = "Datos del libro:\n" +
+                        "Título: " + libro.getTitulo() + "\n" +
+                        "Autor: " + libro.getAutor() + "\n" +
+                        "Disponibilidad: " + (libro.isDisponibilidad() ? "Disponible" : "No disponible") + "\n" +
+                        "Fecha de devolución actual: " + (libro.getFechaDeDevolucion() == 0 ? "No tiene fecha de devolución" : libro.getFechaDeDevolucion());
 
-            if (!libro.isDisponibilidad()) {
-                String nuevaFecha = JOptionPane.showInputDialog("Ingrese la nueva fecha de devolución (en formato DDMMAA):");
-                int nuevaFechaInt = Integer.parseInt(nuevaFecha);
-                servicio.cambiarFechaDeDevolucion(libroId, nuevaFechaInt);
-                JOptionPane.showMessageDialog(null, "Fecha de devolución cambiada con éxito.", "Cambio de Fecha", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, mensajeLibro, "Información del Libro", JOptionPane.INFORMATION_MESSAGE);
+
+                if (!libro.isDisponibilidad()) {
+                    String nuevaFecha = JOptionPane.showInputDialog("Ingrese la nueva fecha de devolución (en formato DDMMAA):");
+                    int nuevaFechaInt = Integer.parseInt(nuevaFecha);
+                    servicio.cambiarFechaDeDevolucion(libroId, nuevaFechaInt);
+                    JOptionPane.showMessageDialog(null, "Fecha de devolución cambiada con éxito.", "Cambio de Fecha", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "El libro está disponible y no tiene una fecha de devolución asignada. No se puede cambiar.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "El libro está disponible y no tiene una fecha de devolución asignada. No se puede cambiar.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "No se encontró un libro con el ID especificado.", "Error", JOptionPane.ERROR_MESSAGE);
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "No se encontró un libro con el ID especificado.", "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(null, "Es necesario que ingreses el id del libro.", "Error", JOptionPane.ERROR_MESSAGE);
+
         }
+
     }
 }
