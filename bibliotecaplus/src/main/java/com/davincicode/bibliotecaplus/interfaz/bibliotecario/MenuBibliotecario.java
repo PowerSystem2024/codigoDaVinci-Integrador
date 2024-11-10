@@ -320,7 +320,7 @@ public class MenuBibliotecario {
         frame.setSize(600, 540);
         frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 
-        ImageIcon imageIcon = new ImageIcon("src/main/java/img/leonardo.png");
+        ImageIcon imageIcon = new ImageIcon("src/main/resources/img/leonardo.png");
         Image image = imageIcon.getImage().getScaledInstance(600, 320, Image.SCALE_SMOOTH);
         JLabel imageLabel = new JLabel(new ImageIcon(image), SwingConstants.CENTER);
         frame.add(imageLabel);

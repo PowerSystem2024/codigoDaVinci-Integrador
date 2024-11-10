@@ -84,7 +84,7 @@ public class RunApp {
        frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 
         // Cargar y redimensionar la imagen
-ImageIcon imageIcon = new ImageIcon("src/main/java/img/eva.png");
+ImageIcon imageIcon = new ImageIcon("src/main/resources/img/eva.png");
 Image image = imageIcon.getImage();
 Image newImage = image.getScaledInstance(600, 350, Image.SCALE_SMOOTH); // Ajusta el tamaño
 imageIcon = new ImageIcon(newImage);
