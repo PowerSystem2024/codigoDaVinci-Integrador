@@ -1,5 +1,4 @@
 package com.davincicode.bibliotecaplus.interfaz.socio;
-import com.davincicode.bibliotecaplus.gestionautores.modelo.Autor;
 import com.davincicode.bibliotecaplus.gestionlibros.modelo.Libro;
 import com.davincicode.bibliotecaplus.gestionlibros.modelo.Resenia;
 import com.davincicode.bibliotecaplus.gestionlibros.servicio.LibroServicio;
@@ -196,8 +195,6 @@ public class MenuSocio {
         }
         return null; // Retornar null si se cancela
     }
-
-
 
     private static String[] armarModalParaIngresarDatosResenia() {
         // Crea un JPanel para los inputs donde ingresa información el usuario
