@@ -1,4 +1,3 @@
-
 package com.davincicode.bibliotecaplus.inicioaplicacion;
 import com.davincicode.bibliotecaplus.interfaz.bibliotecario.MenuBibliotecario;
 import com.davincicode.bibliotecaplus.interfaz.socio.MenuSocio;
