@@ -53,5 +53,10 @@ public class BDAutores implements AutorRepository {
         autores.add(autor);
     }
 
+    @Override
+    public List<Autor> obtenerTodosLosAutores() {
+        return List.of();
+    }
+
 
 }

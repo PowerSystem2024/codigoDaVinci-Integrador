@@ -12,6 +12,7 @@ public class BDSesionSocio implements SesionSocioRepository{
 
     public BDSesionSocio(){
         this.registroSocios = new ArrayList<>();
+        inicializarListaSocio();
     }
 
 private void inicializarListaSocio(){
@@ -19,9 +20,10 @@ private void inicializarListaSocio(){
 }
 @Override
 public boolean permitirLoginSocio(String nombreUsuarioLoginIngresado, String contraseniaLoginIngresada) {
-    if (!nombreUsuarioLoginIngresado.trim().isEmpty() && !contraseniaLoginIngresada.trim().isEmpty()) {
-        for (int i = 0; i < registroSocios.size(); i++) {
-            //valido que nombre suario y contraseña coincidan con algún elemento de la lista
+        //valido que nombre suario y contraseña coincidan con algún elemento de la lista
+        if (!nombreUsuarioLoginIngresado.trim().isEmpty() && !contraseniaLoginIngresada.trim().isEmpty()) {
+        for (int i = 0; i < this.registroSocios.size(); i++) {
+
             if (nombreUsuarioLoginIngresado.equalsIgnoreCase(registroSocios.get(i).getNombreUsuarioLogin())
                     && contraseniaLoginIngresada.equalsIgnoreCase(registroSocios.get(i).getContraseniaLogin())) {
                 return true;

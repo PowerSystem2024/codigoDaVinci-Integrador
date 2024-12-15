@@ -15,5 +15,4 @@ public interface AutorRepository {
     void  agregarAutor(Autor autor);
     public List<Autor> obtenerTodosLosAutores();
        
-    
 }
